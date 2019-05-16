@@ -1,8 +1,8 @@
 image: bcgdv/gitlab-ci-docker
 
 stages:
-  - build
   - test
+  - build
   - deploy
 
 services:
