@@ -1,5 +1,4 @@
 # This is a multi-step build docker file for production
-
 # Specify a base image for builder phase
 FROM node:alpine as builder
 
@@ -7,7 +6,9 @@ FROM node:alpine as builder
 WORKDIR '/app'
 
 # Copy package.json from project to docker dir
-COPY ./package.json ./
+COPY ./client/package.json ./
+
+RUN ls
 
 # Install  dependencies
 RUN npm install
