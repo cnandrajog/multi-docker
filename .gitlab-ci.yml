@@ -15,7 +15,7 @@ test:
   stage: test
   script:
     - echo $pwd
-    - - echo $ls
+    -  echo $ls
     - docker build -t react-test -f ./client/Dockerfile.dev ./client
     - docker run react-test npm test -- --coverage
 
