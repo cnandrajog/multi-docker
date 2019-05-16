@@ -16,6 +16,9 @@ test:
   script:
     - pwd
     - ls
+    - cd client
+    - ls
+    - cd..
     - docker build -t react-test -f ./client/Dockerfile.dev ./client
     - docker run react-test npm test -- --coverage
 
