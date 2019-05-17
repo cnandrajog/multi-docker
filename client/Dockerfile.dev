@@ -7,8 +7,6 @@ WORKDIR '/app'
 # Copy package.json from project to docker dir
 COPY ./client/package.json .
 
-RUN ls
-
 # Install some dependencies
 RUN npm install
 
