@@ -27,18 +27,18 @@ build:
     # Log in to docker CLI
     - echo $CI_REGISTRY_PASSWORD | docker login --username $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
     # pushing images to docker hub
-    - docker tag multi-client multi-client:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
-    - docker tag multi-client multi-client:$CI_BUILD_REF_NAME-latest
-    - docker tag multi-nginx multi-nginx:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
-    - docker tag multi-nginx multi-nginx:$CI_BUILD_REF_NAME-latest
-    - docker tag multi-server multi-server:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
-    - docker tag multi-server multi-server:$CI_BUILD_REF_NAME-latest
-    - docker tag multi-worker multi-worker:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
-    - docker tag multi-worker multi-worker:$CI_BUILD_REF_NAME-latest
-    - docker push multi-client
-    - docker push multi-nginx
-    - docker push multi-server
-    - docker push multi-worker
+    - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
+    - docker tag $CI_REGISTRY_IMAGE $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME-latest
+    #- docker tag multi-nginx multi-nginx:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
+    #- docker tag multi-nginx multi-nginx:$CI_BUILD_REF_NAME-latest
+    #- docker tag multi-server multi-server:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
+    #- docker tag multi-server multi-server:$CI_BUILD_REF_NAME-latest
+    #- docker tag multi-worker multi-worker:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
+    #- docker tag multi-worker multi-worker:$CI_BUILD_REF_NAME-latest
+    #- docker push multi-client
+    #- docker push multi-nginx
+    #- docker push multi-server
+    #- docker push multi-worker
 
 deploy:
   stage: deploy
