@@ -6,7 +6,7 @@ FROM node:alpine as builder
 WORKDIR '/app'
 
 # Copy package.json from project to docker dir
-COPY ./client/package.json ./
+COPY ./package.json ./
 
 # Install  dependencies
 RUN npm install
