@@ -29,12 +29,12 @@ build:
     # pushing images to docker hub
     - docker tag multi-client multi-client:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
     - docker tag multi-client multi-client:$CI_BUILD_REF_NAME-latest
-    - docker tag multi-client multi-nginx:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
-    - docker tag multi-client multi-nginx:$CI_BUILD_REF_NAME-latest
-    - docker tag multi-client multi-server:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
-    - docker tag multi-client multi-server:$CI_BUILD_REF_NAME-latest
-    - docker tag multi-client multi-worker:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
-    - docker tag multi-client multi-worker:$CI_BUILD_REF_NAME-latest
+    - docker tag multi-nginx multi-nginx:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
+    - docker tag multi-nginx multi-nginx:$CI_BUILD_REF_NAME-latest
+    - docker tag multi-server multi-server:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
+    - docker tag multi-server multi-server:$CI_BUILD_REF_NAME-latest
+    - docker tag multi-worker multi-worker:$CI_BUILD_REF_NAME-$CI_PIPELINE_ID
+    - docker tag multi-worker multi-worker:$CI_BUILD_REF_NAME-latest
     - docker push multi-client
     - docker push multi-nginx
     - docker push multi-server
