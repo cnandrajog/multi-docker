@@ -4,8 +4,8 @@ FROM node:alpine
 # Specify a working directory
 WORKDIR '/app'
 
-# Copy package.json from project to docker dir
-COPY package.json ./
+# Copy packageTest.json from project to docker dir
+COPY packageTest.json ./
 
 # Install some dependencies
 RUN npm install
