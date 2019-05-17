@@ -20,10 +20,10 @@ test:
 build:
   stage: build
   script:
-    - docker build -t multi-client ./client
-    - docker build -t multi-nginx ./nginx
-    - docker build -t multi-server ./server
-    - docker build -t multi-worker ./worker
+    - docker build -t $CI_REGISTRY_IMAGE ./client
+    #- docker build -t multi-nginx ./nginx
+    #- docker build -t multi-server ./server
+    #- docker build -t multi-worker ./worker
     # Log in to docker CLI
     - echo $CI_REGISTRY_PASSWORD | docker login --username $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
     # pushing images to docker hub
